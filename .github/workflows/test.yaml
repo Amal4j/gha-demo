@@ -8,3 +8,14 @@ jobs:
         run: |
           echo "welcome to github actions"
           echo "welcome Jyoti"
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build_1
+        run: echo " welcome to Build"
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test_1
+        run: echo "welcome to test"
+  
