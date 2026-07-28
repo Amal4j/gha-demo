@@ -15,7 +15,15 @@ jobs:
         run: echo " welcome to Build"
   Test:
     runs-on: ubuntu-latest
+    needs: Build
     steps:
       - name: Test_1
         run: echo "welcome to test"
-  
+  Deploy:
+    runs-on: ubuntu-latest
+    needs: Test
+    steps:
+      - name: Deploy_learning
+        run: |
+          echo "we have check mulitple job in single workflow"
+          echo "we have check needs on in single workflow"
