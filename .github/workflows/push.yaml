@@ -1,0 +1,23 @@
+name: checking variable and secretes and running multiple Jobs in single workflow
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+jobs:
+  practice:
+    runs-on: ubuntu-latest
+    steps:
+      - name: practice_1
+        run: |
+          echo "Welcome here"
+  Build:
+    runs-on: ubuntu-latest
+    needs: practice
+    steps:
+      - name: Build Stage
+        run: |
+          echo "welcome to Build"
+          echo "hello my , {{vars.DEAR_LOVE}}" 
+          echo "hello, {{secretes.MY_LOVE}}"
