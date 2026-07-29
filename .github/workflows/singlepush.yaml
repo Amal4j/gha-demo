@@ -1,0 +1,14 @@
+name: Push to Main Branch Trigger Workflow
+on:
+  push:
+    branches:
+      - main:
+      - develo:
+      - 'feature/**'
+jobs:
+  pushlearning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Learning Push
+        run:  echo "$?"
+      
