@@ -7,12 +7,12 @@ on:
       - 'feature/**'
 
 jobs:
-  pullrequest:
+  push:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Practicing Pull Request
+      - name: Practicing Psh Request
         run: |
-          echo "Pull Request Triggered"
+          echo "Push Request Triggered"
         
-          echo "hello , {{vars.DEAR_LOVE}}"
+          echo "hello , ${{vars.DEAR_LOVE}}"
