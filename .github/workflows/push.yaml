@@ -1,4 +1,4 @@
-name: checking variable and secretes and running multiple Jobs in single workflow
+name: This WorkFlow will show us Multiple Jobs / inbuilt variable / ref_name / repository/sha/actor by using github.sha
 on:
   push:
     branches:
@@ -23,5 +23,5 @@ jobs:
           echo "hello, ${{secrets.MY_LOVE}}"
           echo "This is Branch ${{github.ref_name}}"
           echo "this is Actor ${{github.actor}}"
-          echo "this is Actor ${{github.sha}}"
-          echo "this is Actor ${{github.repository}}"
+          echo "this is Commit ID ${{github.sha}}"
+          echo "this is Repo ${{github.repository}}"
