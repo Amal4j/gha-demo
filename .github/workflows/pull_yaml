@@ -1,0 +1,18 @@
+name: Create Pull Request Workflow from feature branch
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+
+jobs:
+  pullrequest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Practicing Pull Request
+        run: |
+          echo "Pull Request Triggered"
+          echo "Base Branch: ${{ github.base_ref }}"
+          echo "Source Branch: ${{ github.head_ref }}"
