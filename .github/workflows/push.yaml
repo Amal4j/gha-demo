@@ -19,5 +19,6 @@ jobs:
       - name: Build Stage
         run: |
           echo "welcome to Build"
-          echo "hello my , {{vars.DEAR_LOVE}}" 
-          echo "hello, {{secretes.MY_LOVE}}"
+          echo "hello my , ${{vars.DEAR_LOVE}}" 
+          echo "hello, ${{secretes.MY_LOVE}}"
+          echo "This is finsihed"
