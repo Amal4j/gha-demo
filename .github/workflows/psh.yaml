@@ -16,3 +16,4 @@ jobs:
           echo "Push Request Triggered"
         
           echo "hello , ${{vars.DEAR_LOVE}}"
+          echo "hello , ${{secrets.MY_LVOE}}"
