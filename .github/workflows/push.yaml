@@ -21,4 +21,7 @@ jobs:
           echo "welcome to Build"
           echo "hello my , ${{vars.DEAR_LOVE}}" 
           echo "hello, ${{secrets.MY_LOVE}}"
-      
+          echo "This is Branch ${{github.ref_name}}"
+          echo "this is Actor ${{github.actor}}"
+          echo "this is Actor ${{github.sha}}"
+          echo "this is Actor ${{github.repository}}"
