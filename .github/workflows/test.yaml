@@ -12,3 +12,4 @@ jobs:
         run: | 
           echo "learning new variable GITHUB_OUTPUT"
           echo "tag=v1.0.0" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
