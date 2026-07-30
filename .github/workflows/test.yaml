@@ -5,7 +5,7 @@ on:
       - main
       - 'feature/**'
 jobs:
-  sample:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: step one
@@ -14,6 +14,15 @@ jobs:
           echo "learning new variable GITHUB_OUTPUT"
           echo "tag=v1.0.0" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+    outputs:
+      tag: {{steps.step1.Output.tag}}
       - name: step2
         run: |
           echo "The Tag version is ${{ steps.step1.outputs.tag}}"
+  Test:
+    runs-on: ubuntu
+    needs: Build
+    steps:
+      - name: test
+        run: |
+          echo "we are deploying app with ${{needs.Build.outputs.tag}}"
