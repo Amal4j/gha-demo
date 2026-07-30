@@ -1,0 +1,90 @@
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+  release:
+  issues:
+  issue_comment:
+  pull_request_review:
+  workflow_run:
+--------
+on:
+  branch_protection_rule:
+  check_run:
+  check_suite:
+  create:
+  delete:
+  deployment:
+  deployment_status:
+  discussion:
+  discussion_comment:
+  fork:
+  gollum:
+  issue_comment:
+  issues:
+  label:
+  merge_group:
+  milestone:
+  page_build:
+  project:
+  project_card:
+  project_column:
+  public:
+  pull_request:
+  pull_request_review:
+  pull_request_review_comment:
+  pull_request_target:
+  push:
+  registry_package:
+  release:
+  repository_dispatch:
+  schedule:
+  status:
+  watch:
+  workflow_call:
+  workflow_dispatch:
+  workflow_run:
+----------------------
+
+on:
+  branch_protection_configuration:
+  deployment_review:
+  merge_queue:
+  projects_v2:
+  projects_v2_item:
+  pull_request_review_thread:
+  secret_scanning_alert:
+  secret_scanning_alert_location:
+  security_advisory:
+  security_and_analysis:
+  workflow_job:
+------------
+
+Everything Together
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+  workflow_run:
+  schedule:
+    - cron: '0 0 * * *'
+  release:
+    types: [published]
+  issues:
+    types: [opened, closed]
+  issue_comment:
+  pull_request_review:
+  repository_dispatch:
+--------------------------
+Comman Trigger
+on:
+jobs:
+runs-on:
+steps:
+uses:
+run:
+env:
