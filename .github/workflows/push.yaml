@@ -1,4 +1,4 @@
-name: This WorkFlow will show us Multiple Jobs / inbuilt variable / ref_name / repository/sha/actor by using github.sha
+name: workflow using the same variable reference
 on:
   push:
     branches:
