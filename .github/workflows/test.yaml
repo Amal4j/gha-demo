@@ -10,7 +10,7 @@ jobs:
     outputs:
       tag: ${{steps.step1.outputs.tag}}
     steps:
-      - name: step one
+      - name: Build_Amal
         id: step1
         run: | 
           echo "learning new variable GITHUB_OUTPUT"
@@ -24,6 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
     steps:
-      - name: test
+      - name: Test_Jyoti
         run: |
           echo "we are deploying app with ${{needs.Build.outputs.tag}}"
