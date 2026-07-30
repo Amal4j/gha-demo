@@ -7,20 +7,21 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    outputs:
+      tag: ${{steps.step1.outputs.tag}}
     steps:
       - name: step one
         id: step1
         run: | 
           echo "learning new variable GITHUB_OUTPUT"
-          echo "tag=v1.0.0" >> $GITHUB_OUTPUT
+          echo "tag=v1.0.0" >> $GITHUB_OUTPUT      # steps.step1.outputs.tag
           cat $GITHUB_OUTPUT
-    outputs:
-      tag: {{steps.step1.Output.tag}}
+  
       - name: step2
         run: |
-          echo "The Tag version is ${{ steps.step1.outputs.tag}}"
+          echo "The Tag version is ${{steps.step1.outputs.tag}}"
   Test:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     needs: Build
     steps:
       - name: test
