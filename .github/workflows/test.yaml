@@ -8,8 +8,12 @@ jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
-      - name: sample
+      - name: step one
+        id: step1
         run: | 
           echo "learning new variable GITHUB_OUTPUT"
           echo "tag=v1.0.0" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+      - name: step2
+        run: |
+          echo "The Tag version is ${{ steps.step1.outputs.tag}}"
