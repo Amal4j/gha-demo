@@ -4,13 +4,11 @@ on:
     branches:
       - main
       - 'feature/**'
-
-
-
 jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
       - name: sample
-        run: echo "learning new variable GITHUB_OUTPUT"
-        run: echo "tag=v1.0.0" >> $GITHUB_OUTPUT
+        run: | 
+          echo "learning new variable GITHUB_OUTPUT"
+          echo "tag=v1.0.0" >> $GITHUB_OUTPUT
