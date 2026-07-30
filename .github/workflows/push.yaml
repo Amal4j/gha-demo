@@ -27,9 +27,9 @@ jobs:
           echo "this is Repo ${{github.repository}}"
 
 
-    steps:
-      - name: Practice Actions/checkout@v4
-        uses: actions/checkout@v4
+    # steps:
+    #   - name: Practice Actions/checkout@v4
+    #     uses: actions/checkout@v4
 
-      - name: Deploy Static Web App
-        uses: Azure/static-web-apps-deploy@v1
+    #   - name: Deploy Static Web App
+    #     uses: Azure/static-web-apps-deploy@v1
