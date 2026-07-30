@@ -19,9 +19,17 @@ jobs:
       - name: Build Stage
         run: |
           echo "welcome to Build"
-          echo "hello my , ${{vars.DEAR_LOVE}}" 
+          echo "hello my , ${{vars.ENVIRONMENT_NAME}" 
           echo "hello, ${{secrets.MY_LOVE}}"
           echo "This is Branch ${{github.ref_name}}"
           echo "this is Actor ${{github.actor}}"
           echo "this is Commit ID ${{github.sha}}"
           echo "this is Repo ${{github.repository}}"
+
+
+    steps:
+      - name: Practice Actions/checkout@v4
+        uses: actions/checkout@v4
+
+      - name: Deploy Static Web App
+        uses: Azure/static-web-apps-deploy@v1
