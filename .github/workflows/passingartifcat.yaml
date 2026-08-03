@@ -1,22 +1,37 @@
-name: Learning to Pass Artifcats among Jobs 
+name: Learning to Pass Artifacts among Jobs
 
 on:
   workflow_dispatch:
+
 jobs:
-  uploading-artifcat:
-  runs-on: ubuntu-latest
+
+  uploading-artifact:
+
+    runs-on: ubuntu-latest
+
     steps:
-      - run: echo "Hello Amal and Jyoti" >> sample.txt
-      - uses: actions/uploading-artifcat@v2
+
+      - name: Create Sample File
+        run: echo "Hello Amal and Jyoti" > sample.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: Learning
           path: sample.txt
-  dowloading-artifcat:
-  runs-on: ubuntu-latest
-  needs: uploading-artifcat
+
+  downloading-artifact:
+
+    runs-on: ubuntu-latest
+
+    needs: uploading-artifact
+
     steps:
-      - uses: actions/download-artifcat@v2
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
         with:
           name: Learning
-      - run : cat sample.txt
-        
+
+      - name: Display File
+        run: cat sample.txt
