@@ -1,4 +1,4 @@
-name: Learning to Pass Artifacts among Jobs
+name: Learning to Pass Artifacts among Job
 
 on:
   workflow_dispatch:
