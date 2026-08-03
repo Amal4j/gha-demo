@@ -1,0 +1,7 @@
+name : Learning Environment
+
+jobs:
+  deploy:
+    environment:
+      name: Production
+    runs-on: ubuntu-latest 

@@ -1,0 +1,24 @@
+
+name: Learning Output - out of one Job will be use by other Job in same workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      image_tag: ${{ steps.version.outputs.tag }}
+
+    steps:
+      - id: version
+        run: echo "tag=v1.0.0" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Deploying ${{ needs.build.outputs.image_tag }}"
