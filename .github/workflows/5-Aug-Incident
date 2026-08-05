@@ -1,0 +1,19 @@
+This incident has been assigned to IMS: Cloud Support (L2).
+You can view all the details of the incident by following the link below:
+Take me to the Incident
+
+
+Number
+INC4385066
+Caller
+Veneetha Fernando
+Company
+Orange County Property Appraisals
+Priority
+3
+state
+New
+Short description
+Azure Front Door marking Legitimate traffic as bot and blocking it
+Description
+We use WAF and Azure Front Door for our public website. No changes were made to any resources mentioned here, but for the past 2 weeks, actual traffic connections that worked before are getting blocked by a managed rule Bot300600.Many users from outside are getting blocked, and some are working fine.We are also sometimes getting the WAF threshold reached alert.Requestion for a meeting session with an engineer to check this issue as soon as possible.
