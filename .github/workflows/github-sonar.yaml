@@ -1,4 +1,4 @@
-name: SonarQube connectivity with VM 
+name: SonarQube Analysis
 
 on:
   push:
