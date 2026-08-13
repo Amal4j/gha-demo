@@ -1,0 +1,14 @@
+name: checking version for posgreqsq
+on:
+  push:
+    branches:
+      - main
+      - 'features/**'
+jobs:
+  version:
+    runs-on: ubutnu-latest
+    steps:
+    - name: running postgreq sql
+      run: |
+        sudo systemctl start postgresql
+        echo "$(psql --version)"
