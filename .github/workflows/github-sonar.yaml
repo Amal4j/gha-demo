@@ -1,4 +1,4 @@
-name: SonarQube connectivity with VM 
+name: SonarQube Analysis
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       - name: Test SonarQube Connectivity
         run: |
           echo "Testing SonarQube connectivity..."
-          curl -v "${{ secrets.SONAR_HOST_URL }}"
+          curl -v "${{ secrets.SONAR_HOST_UR }}"
 # -----------------------------
 # # Login to instance where you will be installing SonarQube, perform the below command:
 # sudo vi /etc/sysctl.conf
