@@ -86,3 +86,30 @@ jobs:
     steps:
       - name: deploy_1
         if: ${{env.ENVIRONEMENT == 'Production'}}
+
+        ----------------------
+
+   runs-on: ubuntu-latest
+    needs: Build
+    steps:
+      - name: test
+        run: |
+          echo "we are deploying app with ${{needs.Build.outputs.tag}}"
+----------------------------------------------------
+
+name: job container and service container
+jobs:
+  job_conatiner:
+    runs-on: ubuntu-latest
+    container: node: 20
+  postgreq:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ vars.POSTGRES_DB }}
+        ports:
+          - 5432:5432
+      
