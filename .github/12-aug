@@ -1,0 +1,37 @@
+# learning conditiosn and expresssion
+
+if: $ {{github.ref === 'refs/heads/main'}}
+
+name : practice
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+  pull_request:
+jobs:
+  condition and expression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: practice
+        if: ${{github.ref == 'refs/heads/mmain'}}
+      - name: practice1
+        if: ${{github.event_name = 'push'}}
+      - name: practice2
+        if: ${{github.ref == 'refs/heads/main && github.event_name = 'push'}}
+        run: echo " Deploying on Main"
+      - name: run test
+        run: |
+          npm ci
+          npm run build
+          npm test
+      - name: sucess message 
+        if: ${{ success() }}
+        run: echo "its success"  
+      
+      - name: success
+        if: ${{success()}}
+      - name: failure
+        if: ${{failure()}}
+      - name: independent
+        if: ${{always()}} #cleanup / logging / artifact collection 
