@@ -31,7 +31,7 @@ jobs:
       
       - name: success
         if: ${{success()}}
-      - name: failure
+      - name: failure 
         if: ${{failure()}}
       - name: independent
         if: ${{always()}} #cleanup / logging / artifact collection 
