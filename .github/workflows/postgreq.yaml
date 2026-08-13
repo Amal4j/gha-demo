@@ -6,7 +6,7 @@ on:
       - 'features/**'
 jobs:
   version:
-    runs-on: ubutnu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: running postgreq sql
       run: |
