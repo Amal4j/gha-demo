@@ -35,3 +35,54 @@ jobs:
         if: ${{failure()}}
       - name: independent
         if: ${{always()}} #cleanup / logging / artifact collection 
+      - name: cancelled
+        if: $ {{cancelled()}}  # workflow cancel hua to setup run karo
+        ----------------------
+
+GitHub Context
+      ↓
+    needs
+      ↓
+  Your Job ID
+      ↓
+   GitHub Property
+      ↓
+    result
+
+---
+name: learning npm run build
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+jobs:
+  amal_learning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Amal_Learning_Steps
+        run: npm run build
+  amal_learning1:
+    runs-on: ubuntu-latest
+    needs: amal_learning
+    steps:
+      - name: defining needs and build and results
+        if: ${{needs.amal_learning.result == 'success'}} # needs ek context hai and amal_learning ek object/context hai and result ek value hai context ka and success uski property hai
+        run: |
+          echo "This is ok to run"
+-------------------------
+
+name: define env
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+env:
+  ENVIRONMENT: Production     
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy_1
+        if: ${{env.ENVIRONEMENT == 'Production'}}
