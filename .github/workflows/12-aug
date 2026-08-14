@@ -105,7 +105,7 @@ jobs:
   postgreq:
     runs-on: ubuntu-latest
     services:
-      postgres:
+      postgres: # name of service
         image: postgres:16
         env:
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
