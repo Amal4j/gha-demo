@@ -1,0 +1,19 @@
+Theek hai bhai, araam se, ekdum dheere-dheere. Sochiye,
+ GitHub Actions ka runner ek naya sa, saaf Ubuntu machine hai. 
+ Ab Step one — sabse pehle aapka source code runner tak lana padta hai. Jaise: actions/checkout use karke. 
+ Iska matlab tumhara code runner ke paas aa gaya. Agar checkout nahi karoge,
+  to baad ke steps ke paas dekhne ke liye kuch hoga hi nahi. Step two.
+  Ab runner ko samjhana padta hai ki kaunsa environment chahiye. Jaise Node.js, Java, ya Python.
+   Hum respective setup action use karte hain. Iske baad runner aapka project chalane ke liye tayyar ho jata hai. 
+   Step three fir dependencies restore ya install hoti hain. Jaise Node mein 'npm ci', Java mein 'mvn install',
+    yahin par aksar cache ka fayda hota hai— jaldi restore ho jaati hain. Step four do cheezein hain. 
+    Pehle unit tests chalate hain, jaise 'npm test'. Agar ye fail hue to aksar pipeline ruk jaati hai.
+     Fir SonarQube analysis hota hai jo bugs, security issues, code smells jaise cheezein scan karta hai. 
+     Agar aapka SonarQube self-hosted hai, to runner us server tak pohonch sakta ho aur token properly configured ho
+     . Step five mein application build karte hain, jaise 'npm run build' ya equivalent. Output jaise 'dist/' 
+     folder ya 'app.jar' ban jaata hai. Step six, agar container deploy karna hai to Docker image build hoti hai. 
+     Jaise 'docker build -t myapp:1.0 . Step seven pe uss image ko Trivy se security scan karte hain. 
+     Agar high ya critical vulnerabilities milti hain, to team ke hisaab se pipeline fail bhi ho sakti hai.
+      Step eight, sab clear ho gaya to image Azure Container Registry (ACR) mein push kar dete hain, usually proper 
+Azure login ya OIDC setup ke saath. 
+Aur phir wahi image deployment ke liye ready ho jaati hai
