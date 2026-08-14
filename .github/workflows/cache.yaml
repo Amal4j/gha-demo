@@ -19,7 +19,7 @@ jobs:
       - name: install dependency
         run: npm install
       - name : upload the build using Artifact
-        uses: action/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
           name: app-key
           path: dist/
