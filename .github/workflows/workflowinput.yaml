@@ -1,10 +1,11 @@
+
 name: learning workflow input
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "This is for Giving Input at workflow_dispatch"
-        required: ture
+        description: This is for Giving Input at workflow_dispatch
+        required: true
         type: choice
         options:
           - dev
@@ -17,20 +18,3 @@ jobs:
       - name: This is for input from user at workflow end
         run: |
           echo "Deploy at ${{inputs.environment}}"
-      
-
-
-
-
-
-
-
-
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Show selected environment
-        run: echo "Deploying to ${{ inputs.environment }}"
