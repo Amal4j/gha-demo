@@ -1,0 +1,25 @@
+name : Learning cache concept
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: cache the depednecty 
+        uses: actions/cahce@v4
+        with:
+          path: ~./npm # user ki working directory
+          key: npm-cache # ye cache ka naam hai
+      - name: install dependency
+        run: npm install
+      - name : upload the build using Artifact
+        uses: action/upload-artifact@v4
+        with:
+          name: app-key
+          path: dist/
