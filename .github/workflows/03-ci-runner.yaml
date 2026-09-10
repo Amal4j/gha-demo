@@ -1,0 +1,32 @@
+name: Runner Details
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+jobs:
+  runner-details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Runner Details and Environment Variables
+        run: |
+          echo "Runner Name: ${{ runner.name }}"
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Runner Architecture: ${{ runner.arch }}"
+          echo "Runner Temporary Directory: ${{ runner.temp }}"
+          echo "Runner Workspace Directory: ${{ runner.workspace }}"
+          echo "Runner Tool Cache Directory: ${{ runner.tool_cache }}"
+          echo "Runner Home Directory: ${{ runner.home }}"
+          echo  "Runner Job Status: ${{ runner.job_status }}"
+          echo  "Runner Job Attempt: ${{ runner.job_attempt }}"
+          echo  "Runner Job Container: ${{ runner.job_container }}"
+          echo  "Runner Job Container Image: ${{ runner.job_container_image }}"
+          echo "Runner Job Container Options: ${{ runner.job_container_options }}"
+          echo "Runner Job Container Environment: ${{ runner.job_container_env }}"
+          echo "Runner Job Container Volumes: ${{ runner.job_container_volumes }}"
+          echo "Runner Job Container Network: ${{ runner.job_container_network }}"
+          echo "Runner Job Container Entrypoint: ${{ runner.job_container_entrypoint }}"
+          echo "Runner Job Container Command: ${{ runner.job_container_command }}"
+          echo "Runner Job Container Working Directory: ${{ runner.job_container_working_directory }}"
+          echo "Runner: ${{ runner.Environment }}"
