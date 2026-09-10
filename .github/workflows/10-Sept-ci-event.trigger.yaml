@@ -1,0 +1,19 @@
+name: Which Event Triggered the Workflow
+on:
+#   push:
+#     branches:
+#       - main
+#       - 'feature/**'
+#   pull_request:
+#     branches:
+#       - main
+#       - 'feature/**'
+  workflow_dispatch:
+jobs:
+  Event_Trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Event Trigger
+        run: |
+          echo "The workflow was triggered by the event: ${{ github.event_name }}"
+          echo "The reference that triggered the workflow is: ${{ github.ref }}"
